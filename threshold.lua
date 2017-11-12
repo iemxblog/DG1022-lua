@@ -57,7 +57,7 @@ function manageResult(r)
         text = text .. '}\n'
     end
     print(text)
-    file = io.open(os.date("resultats/%Y-%m-%d-%H:%M:%S.txt", os.time()), "w")
+    file = io.open(os.date("results/threshold-%Y-%m-%d-%H:%M:%S.txt", os.time()), "w")
     file:write(text)
     file:close() 
 end
