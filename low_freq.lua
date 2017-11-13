@@ -1,8 +1,18 @@
 DG1022 = require('DG1022')
 lib = require('lib')
 
+
 frequencies = { 121, 120, 119, 118, 117, 116, 115, 114, 113, 112, 111,
                 101, 91, 81, 71, 61, 51, 41, 31, 21, 11, 1}
+
+if #arg == 1 and arg[1] == "shuffle" then
+    lib.shuffle(frequencies)
+    print("Shuffling frequencies")
+    for _, f in ipairs(frequencies) do
+        print(f)
+    end
+end
+
 
 gen = DG1022:new()
 gen:sinusoid()
