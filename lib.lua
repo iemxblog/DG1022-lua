@@ -35,5 +35,12 @@ function lib.input_answer()
     return i
 end
 
+function lib.shuffle(t)
+    math.randomseed(os.time())
+    for i=1, #t do
+        local r = math.random(#t)
+        t[i], t[r] = t[r], t[i]
+    end
+end
 
 return lib
