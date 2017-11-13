@@ -8,9 +8,7 @@ end
 function DG1022:new(o)
     o = o or {}
     o.device = o.device or "/dev/usbtmc0"
-    tmp = assert(io.open(o.device, "r"))    -- Checks if file exists
-    tmp:close()                             -- 
-    o.file = assert(io.open(o.device, "w"))
+    o.file = assert(io.open(o.device, "r+"))
     setmetatable(o, self)
     self.__index = self
     return o 
