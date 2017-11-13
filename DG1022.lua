@@ -1,4 +1,4 @@
-DG1022 = {}
+local DG1022 = {}
 
 local function sleep(n)
     local t0 = os.clock()
@@ -52,3 +52,5 @@ function DG1022:pos_voltage(vpp)
     self:voltage(vpp)
     self:offset(vpp/2)
 end
+
+return DG1022
