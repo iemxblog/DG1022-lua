@@ -1,9 +1,6 @@
-local DG1022 = {}
+lib = require("lib")
 
-local function sleep(n)
-    local t0 = os.clock()
-    while os.clock() - t0 < n do end
-end
+local DG1022 = {}
 
 function DG1022:new(o)
     o = o or {}
@@ -17,7 +14,7 @@ end
 function DG1022:write(line)
     self.file:write(line .. "\n")
     self.file:flush()
-    sleep(0.1)
+    lib.sleep(0.1)
 end
 
 function DG1022:close()
@@ -33,7 +30,7 @@ function DG1022:output(state)
 end
 
 function DG1022:frequency(freq)
-    self:write(string.format("FREQ %.3f", freq))
+    self:write(string.format("FREQ %.6f", freq))
 end
 
 function DG1022:sinusoid()
@@ -48,8 +45,12 @@ function DG1022:offset(o)
     self:write(string.format("VOLT:OFFS %.3f", o))
 end
 
+function DG1022:phase(p)
+    self:write(string.format("PHAS %.3f", p))
+end
+
 function DG1022:pos_voltage(vpp)
-    self:voltage(vpp)
+    self:voltage(vpp-0.001)
     self:offset(vpp/2)
 end
 

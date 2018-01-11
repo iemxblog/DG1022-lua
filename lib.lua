@@ -20,8 +20,11 @@ function lib.displayResults(results)
     return text
 end
 
-function lib.writeResults(results, name)
+function lib.writeResults(results, name, comments)
     file = io.open(os.date("results/" .. name .. "-%Y-%m-%d-%H:%M:%S.txt", os.time()), "w")
+    if comments ~= nil then 
+        file:write(comments .. "\n")
+    end
     file:write(lib.displayResults(results))
     file:close() 
 end
@@ -41,6 +44,11 @@ function lib.shuffle(t)
         local r = math.random(#t)
         t[i], t[r] = t[r], t[i]
     end
+end
+
+function lib.sleep(n)
+    local t0 = os.clock()
+    while os.clock() - t0 < n do end
 end
 
 return lib
