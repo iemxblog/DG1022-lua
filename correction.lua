@@ -1,7 +1,7 @@
 DG1022 = require("DG1022")
 lib = require("lib")
 
-f = 0.002001
+f = 0.002401
 
 gen = DG1022:new()
 gen:sinusoid()
@@ -11,7 +11,7 @@ gen:phase(30)
 gen:frequency(f)
 gen:output(true)
 
-for i = 0, 0.000039, 0.000002 do
+for i = 0, 0.000019, 0.000002 do
     for j = 1, 9 do
         local f1 = f+i
         local f2 = f+i+0.000001
