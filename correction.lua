@@ -1,20 +1,21 @@
 DG1022 = require("DG1022")
 lib = require("lib")
 
-f = 0.002401
+fs = 0.002081 -- start
+fe = 0.002100 -- end
 
 gen = DG1022:new()
 gen:sinusoid()
 gen:offset(2.5)
 gen:voltage(4.990)
 gen:phase(30)
-gen:frequency(f)
+gen:frequency(fs)
 gen:output(true)
 
-for i = 0, 0.000019, 0.000002 do
+for i = 0, fe-fs, 0.000002 do
     for j = 1, 9 do
-        local f1 = f+i
-        local f2 = f+i+0.000001
+        local f1 = fs+i
+        local f2 = fs+i+0.000001
         print(f1)
         gen:frequency(f1)
         lib.sleep(1.1)
