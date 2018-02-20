@@ -1,8 +1,8 @@
 DG1022 = require("DG1022")
 lib = require("lib")
 
-fs = 0.000041 -- start
-fe = 0.000120 -- end
+fs = 0.000141 -- start
+fe = 0.000220 -- end
 
 gen = DG1022:new()
 gen:sinusoid()
