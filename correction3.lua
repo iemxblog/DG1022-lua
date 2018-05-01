@@ -1,12 +1,12 @@
 DG1022 = require("DG1022")
 lib = require("lib")
 
-local fs = {29, 131, 491, 906, 2091, 4100, 8091, 17909}
+local fs = {500, 491, 499, 492, 498, 493, 497, 494, 496, 495}
 
 gen = DG1022:new()
 gen:sinusoid()
 gen:offset(2.5)
-gen:voltage(4.990)
+gen:voltage(4.980)
 gen:phase(89)
 
 for _, f in ipairs(fs) do
