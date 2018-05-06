@@ -1,7 +1,7 @@
 DG1022 = require("DG1022")
 lib = require("lib")
 
-local fs = {20995, 21991, 23991, 26997, 31992, 37991, 45991, 54990}
+local fs = {77, 276, 533, 934, 1532, 2126, 2565, 3003}
 
 gen = DG1022:new()
 gen:sinusoid()
