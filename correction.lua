@@ -1,8 +1,8 @@
 DG1022 = require("DG1022")
 lib = require("lib")
 
-fs = 0.002989 -- start
-fe = 0.003004 -- end
+fs = 0.003083 -- start
+fe = 0.003098 -- end
 t = 2         -- time for each frequency
 n = 8         -- number of repetitions
 
